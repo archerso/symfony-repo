@@ -1,0 +1,43 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    {% if editMode %}
+    Modifier
+    {% else %}
+        Ajouter
+    {% endif %}
+{% endblock %}
+
+
+    
+{% block body %}
+
+    <h1 class="text-center my-4">
+    {% if editMode %}
+    Modifier
+    {% else %}
+        Ajouter
+    {% endif %}
+    un article</h1>
+
+
+ {# {{form(form)}} #}
+{# ! la fonction form() affiche tout le formulaire d'un block nom modifiable #}
+{{form_start(formArticle, {
+    attr: { novalidate: 'novalidate' }
+})}}
+
+{# ! en twig un tableau { indice: valeur}}
+
+{{form_row(form.title,{
+    label: "title",
+    attr: {placeholder:"le titre de l'arcticle"}
+    })}}
+{{form_row(form.image)}}
+{{form_row(form.content)}}
+<button type="submit" class="btn btn-primary">Envoyer</button>
+
+{{form_end(form)}}
+{# symfony protege des injection dans les formulaire par crsf #}
+
+ {% endblock %}

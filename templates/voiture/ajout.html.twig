@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+
+
+{% block title %}
+
+{% endblock %}
+
+{% block body %}
+    <h1 class="text-center my-4"> Ajout voitures</h1> 
+    <div class="container">
+    {{form_start(formVoiture)}}
+        {{form_row(formVoiture.marque)}}
+        {{form_row(formVoiture.model)}}
+        {{form_row(formVoiture.prix)}}
+        {{form_row(formVoiture.description)}}
+
+    <button class="btn btn-primary">Ajouter</button>
+    {{form_end(formVoiture)}}
+</div>
+{% endblock %}

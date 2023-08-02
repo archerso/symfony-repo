@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Voiture{% endblock %}
+
+{% block body %}
+    <h1 class="text-cznter my-4">Les voitures</h1> 
+    <div class="container">
+    {% for voiture in items %}
+        {{ voiture.marque }}
+        <br>
+    {% endfor %}
+        </div>  
+{% endblock %}
